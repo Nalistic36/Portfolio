@@ -1,0 +1,153 @@
+body
+{
+    color: white;
+    font-size: 70px;
+    font-family: "Times New Roman", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(#feffda, #c49d4b);
+}
+
+.phone
+{
+    position: relative;
+    width: 340px;
+    height: 640px;
+    background: #121212;
+    border-radius: 25px;
+}
+
+.screen
+{
+    position : absolute;
+    top: 6px;
+    bottom: 6px;
+    right: 6px;
+    left: 6px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.screen::before
+{
+    content: '';
+    position: absolute;
+    top : 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255, 255, .02);
+    transform: skewX(-15deg);
+    z-index: 1;
+}
+
+.screen img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.time
+{
+    position: absolute;
+    top: 40%;
+    width: 92%;
+    height: 10%;
+    left: 4%;
+}
+
+.google-search
+{
+    position: absolute;
+    top: 55%;
+    height: 5%;
+    border-radius: 30px;
+    width: 92%;
+    left: 4%;
+    background-color: rgba(255,255, 255, .7);
+}
+
+.apps
+{
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    width: 92%;
+    height: 25%;
+}
+
+.first-arrow
+{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 0;
+}
+
+.second-arrow
+{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 60%;
+}
+
+.app
+{
+    position: absolute;
+    width: 15%;
+    background-color: gray;
+    border-radius: 30%;
+}
+
+.app:after 
+{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+#column1
+{
+    left: 5%;
+}
+
+#column2
+{
+    left: 30%;
+}
+
+#column3
+{
+    left: 55%;
+}
+
+#column4
+{
+    left: 80%;
+}
+
+#hover
+{
+    position: absolute;
+    background-color: rgb(33, 33, 33);
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+#hover:hover
+{
+    opacity: 0;
+}
+

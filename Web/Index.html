@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>alistic Portfolio</title>
+        <link rel="stylesheet" href="Index.css">
+    </head>
+
+    <body>
+        <div class="phone">
+            <div class="screen">
+                <img src="resources/background.jpg">
+                <div class="time" id="time">00:00</div>
+                <div class="google-search"></div>
+                <div class="apps">
+                    <div class="first-arrow">
+                        <div class="app" id="column1"></div>
+                        <div class="app" id="column2"></div>
+                        <div class="app" id="column3"></div>
+                        <div class="app" id="column4"></div>
+                    </div>
+                    <div class="second-arrow">
+                        <div class="app" id="column1"></div>
+                        <div class="app" id="column2"></div>
+                        <div class="app" id="column3"></div>
+                        <div class="app" id="column4"></div>
+                    </div>
+                </div>
+                <div id="hover"></div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    window.onload = function() {
+        startTime();
+    };
+
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      m = checkTime(m);
+      document.getElementById("time").innerHTML =
+      h + ":" + m;
+      var t = setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+</script>
