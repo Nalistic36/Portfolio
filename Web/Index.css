@@ -1,22 +1,23 @@
 body
 {
     color: white;
-    font-size: 70px;
-    font-family: "Times New Roman", Courier, monospace;
+    font-size: 80px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: lighter;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: radial-gradient(#feffda, #c49d4b);
+    background-color: black;
 }
 
 .phone
 {
     position: relative;
-    width: 340px;
-    height: 640px;
+    width: 100vw;
+    height: 100vh;
     background: #121212;
     border-radius: 25px;
 }
@@ -24,13 +25,11 @@ body
 .screen
 {
     position : absolute;
-    top: 6px;
-    bottom: 6px;
-    right: 6px;
-    left: 6px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background: #000;
-    border-radius: 20px;
-    overflow: hidden;
 }
 
 .screen::before
@@ -57,6 +56,15 @@ body
 
 .time
 {
+    position: absolute;
+    top: 35%;
+    width: 92%;
+    height: 10%;
+    left: 4%;
+}
+.date
+{
+    font-size: 40px;
     position: absolute;
     top: 40%;
     width: 92%;
@@ -103,21 +111,16 @@ body
 .app
 {
     position: absolute;
-    width: 15%;
+    height: 8vh;
+    width: 8vh;
     background-color: gray;
     border-radius: 30%;
-}
-
-.app:after 
-{
-    content: "";
-    display: block;
-    padding-bottom: 100%;
+    transform: translate(-50%, -50%)
 }
 
 #column1
 {
-    left: 5%;
+    left: 10%;
 }
 
 #column2
@@ -127,12 +130,17 @@ body
 
 #column3
 {
-    left: 55%;
+    left: 50%;
 }
 
 #column4
 {
-    left: 80%;
+    left: 70%;
+}
+
+#column5
+{
+    left: 90%;
 }
 
 #hover
@@ -141,7 +149,7 @@ body
     background-color: rgb(33, 33, 33);
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0;
     transition: 0.4s;
     z-index: 2;
 }
@@ -151,3 +159,23 @@ body
     opacity: 0;
 }
 
+@media all and (orientation: landscape) 
+{
+    #background
+    {
+        background-repeat: no-repeat;
+        background: url(resources/landscape.jpg);
+        background-size:100% 100%;
+
+    }
+}
+
+@media all and (orientation: portrait) 
+{
+    #background
+    {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-image: url(resources/background.jpg);
+    }
+}
